@@ -149,4 +149,4 @@ Simulated with Icarus Verilog 12. Full details in [docs/verification.md](docs/ve
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Replace `<Your Name>` in the license file with your name.
+MIT, see [LICENSE](LICENSE).
