@@ -1,0 +1,18 @@
+# Simulation outputs
+sim/*.vvp
+sim/*.vcd
+sim/*.wdb
+sim/sim_log.txt
+sim/xsim_log.txt
+xsim.dir/
+*.jou
+*.log
+*.pb
+webtalk*
+# Vivado
+vivado_proj/
+.Xil/
+*.str
+# OS / editor
+.DS_Store
+*.swp
