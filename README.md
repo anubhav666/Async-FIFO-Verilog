@@ -1,8 +1,8 @@
 # Asynchronous FIFO (Verilog)
 
-A parameterizable **dual-clock (asynchronous) FIFO** in synthesizable Verilog-2001, with a self-checking testbench, Vivado/Icarus simulation scripts, example CDC constraints, and full documentation.
+A parameterizable **dual-clock (asynchronous) FIFO** in synthesizable Verilog-2001, with a self-checking testbench, Vivado simulation scripts, example CDC constraints, and full documentation.
 
-It safely passes data between two **unrelated clock domains** using Gray-coded pointers and two-flop synchronizers, following the classic design approach of Clifford E. Cummings (*"Simulation and Synthesis Techniques for Asynchronous FIFO Design"*, SNUG 2002).
+It safely passes data between two **unrelated clock domains** using Gray-coded pointers and two-flop synchronizers.
 
 ![Waveform](docs/images/waveform.png)
 
@@ -125,14 +125,6 @@ Simulated with Icarus Verilog 12. Full details in [docs/verification.md](docs/ve
 | Parameter sweeps (DW/AW = 8/2, 16/3, 32/5, default 8/4) | All pass |
 | Mutation tests (broken full logic, binary-compare empty logic) | Both correctly **fail** |
 
-> Synthesis and timing numbers are not included yet because they depend on your target device. Run the flow in [docs/vivado_flow.md](docs/vivado_flow.md) and fill in the table below.
-
-| Metric (device: ______) | Value |
-|---|---|
-| LUTs / FFs | |
-| Distributed RAM (LUTRAM) | |
-| Max wclk / rclk | |
-| CDC report: unsafe crossings | |
 
 ## Known limitations
 
@@ -140,12 +132,6 @@ Simulated with Icarus Verilog 12. Full details in [docs/verification.md](docs/ve
 - `wfull` and `rempty` are conservative: because of synchronizer latency they can stay asserted for a few cycles after the condition has cleared. They are never wrong in the unsafe direction (verified by the testbench).
 - No almost-full / almost-empty flags or occupancy counters (listed under future work).
 - Behavioural simulation does not model metastability; see [docs/design_notes.md](docs/design_notes.md).
-
-## References
-
-1. C. E. Cummings, *Simulation and Synthesis Techniques for Asynchronous FIFO Design*, SNUG San Jose, 2002.
-2. C. E. Cummings, *Clock Domain Crossing (CDC) Design & Verification Techniques Using SystemVerilog*, SNUG Boston, 2008.
-3. Xilinx UG912 / UG906: Vivado Properties and Design Analysis & Closure Techniques (CDC checks).
 
 ## License
 
